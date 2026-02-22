@@ -23,20 +23,33 @@ public class Topic {
     // TODO 1: Declare the fields (+10 XP each = 40 XP)
     // ============================================================
     // Declare these private fields:
+
     //   - int id
     //   - String name
     //   - LocalDateTime createdAt
     //   - LocalDateTime updatedAt
     //
     // Hint: private int id;
+    private int id;
+    private String name;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
     // ============================================================
-
-
 
     // ============================================================
     // TODO 2: Create the constructor (+20 XP)
     // ============================================================
     // Create a constructor that takes (int id, String name)
+
+    public Topic(int id, String name) {
+        this.id = id;
+        this.name = name;
+        LocalDateTime now = LocalDateTime.now();
+        this.createdAt = now;
+        this.updatedAt = now;
+    }
+
+
     // Inside the constructor:
     //   - Set this.id = id
     //   - Set this.name = name
@@ -70,6 +83,39 @@ public class Topic {
     //       this.name = name;
     //       this.updatedAt = LocalDateTime.now();
     //   }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     // ============================================================
 
 
@@ -81,6 +127,10 @@ public class Topic {
     //   "[1] Java Basics (Created: 2025-02-18T10:30:00)"
     //
     // Hint: return "[" + id + "] " + name + " (Created: " + createdAt + ")";
+    @Override
+    public String toString(){
+        return  id +" "+name+" Created: "+ createdAt;
+    }
     // ============================================================
 
 
